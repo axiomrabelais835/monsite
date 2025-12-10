@@ -546,6 +546,38 @@
       </div>
     </footer>
     <script>
+      // Bloquer le clic droit
+document.addEventListener("contextmenu", function(e) {
+    e.preventDefault();
+});
+
+// Bloquer F12
+document.addEventListener("keydown", function(e) {
+    if (e.keyCode == 123) { // F12
+        e.preventDefault();
+    }
+});
+
+// Bloquer Ctrl+Shift+I, Ctrl+Shift+C, Ctrl+Shift+J
+document.addEventListener("keydown", function(e) {
+    if (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "C" || e.key === "J")) {
+        e.preventDefault();
+    }
+});
+
+// Bloquer Ctrl+U (voir code source)
+document.addEventListener("keydown", function(e) {
+    if (e.ctrlKey && e.key === "u") {
+        e.preventDefault();
+    }
+});
+
+// Bloquer Ctrl+S (enregistrer sous)
+document.addEventListener("keydown", function(e) {
+    if (e.ctrlKey && e.key === "s") {
+        e.preventDefault();
+    }
+});
       // Keep dropdown open for 3s after mouseleave
       (function(){
         const TIMEOUT = 3000;
@@ -607,3 +639,4 @@
     </script>
   </body>
 </html>
+
